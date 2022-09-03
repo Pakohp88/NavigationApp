@@ -15,9 +15,4 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
-    @IBAction func viewDetailButton(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "detailSegue", sender: Self.self)
-    }
-    
 }

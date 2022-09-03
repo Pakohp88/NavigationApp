@@ -3,6 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,24 +17,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqX-Ib-YEr">
-                                <rect key="frame" x="155" y="548" width="200" height="50"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="bkx-NT-m52">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMN-pK-h1m">
+                                <rect key="frame" x="20" y="96" width="335" height="180"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card" translatesAutoresizingMaskIntoConstraints="NO" id="dW9-oj-m3s">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="110"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9AY-iU-Rxs">
+                                        <rect key="frame" x="0.0" y="110" width="335" height="70"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="7nc-j5-hBw"/>
-                                    <constraint firstAttribute="height" constant="50" id="F8z-ik-Dx6"/>
+                                    <constraint firstAttribute="bottom" secondItem="dW9-oj-m3s" secondAttribute="bottom" constant="70" id="BGS-2B-zLh"/>
+                                    <constraint firstAttribute="height" constant="180" id="MT5-v6-VdQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="dW9-oj-m3s" secondAttribute="trailing" id="PMC-af-8fj"/>
+                                    <constraint firstItem="dW9-oj-m3s" firstAttribute="top" secondItem="rMN-pK-h1m" secondAttribute="top" id="dCN-R0-Vd6"/>
+                                    <constraint firstAttribute="bottom" secondItem="9AY-iU-Rxs" secondAttribute="bottom" id="fZB-g7-DaB"/>
+                                    <constraint firstAttribute="trailing" secondItem="9AY-iU-Rxs" secondAttribute="trailing" id="kOY-ri-7Nx"/>
+                                    <constraint firstItem="9AY-iU-Rxs" firstAttribute="leading" secondItem="rMN-pK-h1m" secondAttribute="leading" id="pef-PD-XTk"/>
+                                    <constraint firstItem="9AY-iU-Rxs" firstAttribute="top" secondItem="dW9-oj-m3s" secondAttribute="bottom" id="uII-Kb-SPA"/>
+                                    <constraint firstItem="dW9-oj-m3s" firstAttribute="leading" secondItem="rMN-pK-h1m" secondAttribute="leading" id="xZG-7G-z2m"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="Ver detalle"/>
-                                <connections>
-                                    <action selector="viewDetailButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oCD-Ow-6Ht"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="VCBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dqX-Ib-YEr" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-20" id="gA0-8u-Z8h"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dqX-Ib-YEr" secondAttribute="trailing" constant="20" id="rgY-rr-XHn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rMN-pK-h1m" secondAttribute="trailing" constant="20" id="A4b-fP-EgL"/>
+                            <constraint firstItem="rMN-pK-h1m" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="muL-sg-wAz"/>
+                            <constraint firstItem="rMN-pK-h1m" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ptW-Ay-Kdv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="y06-ev-jO3"/>
@@ -65,12 +85,20 @@
                                     <action selector="viewMoreButton:" destination="vO6-8c-FUD" eventType="touchUpInside" id="jTs-q9-8eg"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="8Hd-fh-1rl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <color key="backgroundColor" name="VCBackgroundColor"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jzj-oi-ZtF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="8Hd-fh-1rl" firstAttribute="trailing" secondItem="jzj-oi-ZtF" secondAttribute="trailing" id="58L-4A-gx9"/>
+                            <constraint firstItem="8Hd-fh-1rl" firstAttribute="top" secondItem="CZz-dA-BNE" secondAttribute="top" id="Fg0-FM-xQQ"/>
+                            <constraint firstItem="jzj-oi-ZtF" firstAttribute="bottom" secondItem="8Hd-fh-1rl" secondAttribute="bottom" id="U4v-Ud-WWD"/>
                             <constraint firstItem="LRQ-8w-ngE" firstAttribute="bottom" secondItem="jzj-oi-ZtF" secondAttribute="bottom" constant="-20" id="Wvw-C4-VWc"/>
                             <constraint firstItem="jzj-oi-ZtF" firstAttribute="trailing" secondItem="LRQ-8w-ngE" secondAttribute="trailing" constant="20" id="Xws-eO-02O"/>
+                            <constraint firstItem="8Hd-fh-1rl" firstAttribute="leading" secondItem="jzj-oi-ZtF" secondAttribute="leading" id="hZe-oO-Prl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="Him-6j-Xp1"/>
@@ -109,8 +137,20 @@
                     <view key="view" contentMode="scaleToFill" id="oEM-Gn-Gvh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="caT-AW-wys">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <color key="backgroundColor" name="VCBackgroundColor"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="WS5-Kf-Tlp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="caT-AW-wys" firstAttribute="top" secondItem="oEM-Gn-Gvh" secondAttribute="top" id="dHD-9y-xeh"/>
+                            <constraint firstItem="caT-AW-wys" firstAttribute="leading" secondItem="WS5-Kf-Tlp" secondAttribute="leading" id="g5g-Fu-Kcf"/>
+                            <constraint firstItem="caT-AW-wys" firstAttribute="trailing" secondItem="WS5-Kf-Tlp" secondAttribute="trailing" id="qYK-fq-Uo0"/>
+                            <constraint firstItem="WS5-Kf-Tlp" firstAttribute="bottom" secondItem="caT-AW-wys" secondAttribute="bottom" id="z8f-xh-sCS"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="View More" id="NWy-bp-9vd"/>
                 </viewController>
@@ -126,14 +166,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eLn-su-JTn">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eLn-su-JTn">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="866-8u-YbU" appends="YES" id="xpR-14-0vT"/>
+                                    <outletCollection property="gestureRecognizers" destination="NGf-Ay-0hM" appends="YES" id="BTc-K7-u9Z"/>
+                                </connections>
                             </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="fIy-bI-Pc4">
                                 <rect key="frame" x="129.5" y="592" width="116" height="26"/>
-                                <connections>
-                                    <action selector="posterPageControlAction:" destination="01n-W3-xC2" eventType="valueChanged" id="CrE-qk-Qll"/>
-                                </connections>
                             </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ze1-9Q-KVS"/>
@@ -154,6 +196,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y96-fu-oiH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="866-8u-YbU" userLabel="Left Swipe Gesture Recognizer">
+                    <connections>
+                        <action selector="leftSwipeDone:" destination="01n-W3-xC2" id="Ioh-Lp-GmV"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="NGf-Ay-0hM" userLabel="Right Swipe Gesture Recognizer">
+                    <connections>
+                        <action selector="rightSwipeDone:" destination="01n-W3-xC2" id="FYx-GC-Tx6"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="20" y="1038.5307346326838"/>
         </scene>
@@ -166,6 +218,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="i6X-AQ-KDV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Help" image="questionmark" catalog="system" id="gRw-UI-tHD"/>
                 </viewController>
@@ -195,9 +248,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Background" width="660" height="984"/>
+        <image name="card" width="350" height="200"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="questionmark" catalog="system" width="96" height="128"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
+        <namedColor name="VCBackgroundColor">
+            <color red="0.69800001382827759" green="0.7839999794960022" blue="0.875" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

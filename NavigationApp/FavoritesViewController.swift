@@ -19,7 +19,25 @@ class FavoritesViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func posterPageControlAction(_ sender: Any) {
-        FavoritePosterimageView.image = UIImage(named: posters[PosterPageControl.currentPage])
+    @IBAction func leftSwipeDone(_ sender: Any) {
+        if PosterPageControl.currentPage == 0 {
+            PosterPageControl.currentPage = posters.count
+            FavoritePosterimageView.image = UIImage(named: posters[PosterPageControl.currentPage])
+        }
+        else{
+            PosterPageControl.currentPage = PosterPageControl.currentPage - 1
+            FavoritePosterimageView.image = UIImage(named: posters[PosterPageControl.currentPage])
+        }
+    }
+    
+    @IBAction func rightSwipeDone(_ sender: Any) {
+        if PosterPageControl.currentPage == posters.count - 1{
+            PosterPageControl.currentPage = 0
+            FavoritePosterimageView.image = UIImage(named: posters[PosterPageControl.currentPage])
+        }
+        else{
+            PosterPageControl.currentPage = PosterPageControl.currentPage + 1
+            FavoritePosterimageView.image = UIImage(named: posters[PosterPageControl.currentPage])
+        }
     }
 }

@@ -9,8 +9,14 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    var generoRecibido = String()
+    let movieDataManager = MovieDataManager()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        movieDataManager.fetch(genres: generoRecibido)
+        print(movieDataManager.movies)
     }
     
     @IBAction func viewMoreButton(_ sender: UIButton) {

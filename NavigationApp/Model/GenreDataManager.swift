@@ -8,7 +8,7 @@
 import Foundation
 
 class GenreDataManager{
-    private var genres: [Genre] = []
+    public var genres: [Genre] = []
     
     func fetch(){
         if let file = Bundle.main.url(forResource: "genres", withExtension: "json"){
@@ -17,9 +17,7 @@ class GenreDataManager{
                 let decodeGenres = try JSONDecoder().decode([String].self, from: data)
                 for genre in decodeGenres{
                     genres.append(Genre(genre: genre))
-                }
-                
-                print("genres: ", genres)
+                }            
             }
             catch{
                 print("Error")

@@ -9,7 +9,7 @@ import Foundation
 
 class MovieDataManager{
     
-    private var movies: [Movie] = []
+    public var movies: [Movie] = []
     
     func fetch(genres : String){
         if let file = Bundle.main.url(forResource: "movies", withExtension: "json"){

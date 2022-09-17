@@ -8,11 +8,16 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
+    let movieDataManager = MovieDataManager()
+    let genreDataManager = GenreDataManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        movieDataManager.fetch(genres: "Adventure")
+        //genreDataManager.fetch()
     }
+    
+    
     
 }

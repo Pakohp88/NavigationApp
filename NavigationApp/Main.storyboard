@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMN-pK-h1m">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMN-pK-h1m" customClass="CustomView" customModule="NavigationApp" customModuleProvider="target">
                                 <rect key="frame" x="20" y="96" width="335" height="180"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card" translatesAutoresizingMaskIntoConstraints="NO" id="dW9-oj-m3s">
@@ -46,6 +46,20 @@
                                     <constraint firstItem="9AY-iU-Rxs" firstAttribute="top" secondItem="dW9-oj-m3s" secondAttribute="bottom" id="uII-Kb-SPA"/>
                                     <constraint firstItem="dW9-oj-m3s" firstAttribute="leading" secondItem="rMN-pK-h1m" secondAttribute="leading" id="xZG-7G-z2m"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOffset">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -85,20 +99,41 @@
                                     <action selector="viewMoreButton:" destination="vO6-8c-FUD" eventType="touchUpInside" id="jTs-q9-8eg"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="8Hd-fh-1rl">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="8Hd-fh-1rl">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="VCBackgroundColor"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mFa-cj-QyL">
+                                <rect key="frame" x="16" y="96" width="343" height="200"/>
+                                <subviews>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YQx-9p-kNj">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="200"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="h0P-kW-6Ua">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="200"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </view>
+                                        <blurEffect style="systemUltraThinMaterial"/>
+                                    </visualEffectView>
+                                </subviews>
+                                <color key="backgroundColor" name="BackAlpha"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="YQx-9p-kNj" secondAttribute="bottom" id="E43-zd-Ay3"/>
+                                    <constraint firstItem="YQx-9p-kNj" firstAttribute="leading" secondItem="mFa-cj-QyL" secondAttribute="leading" id="F3A-Uq-XYq"/>
+                                    <constraint firstItem="YQx-9p-kNj" firstAttribute="top" secondItem="mFa-cj-QyL" secondAttribute="top" id="Vp8-yt-D58"/>
+                                    <constraint firstAttribute="height" constant="200" id="XMZ-ip-GHc"/>
+                                    <constraint firstAttribute="trailing" secondItem="YQx-9p-kNj" secondAttribute="trailing" id="d1D-3n-apx"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jzj-oi-ZtF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="8Hd-fh-1rl" firstAttribute="trailing" secondItem="jzj-oi-ZtF" secondAttribute="trailing" id="58L-4A-gx9"/>
-                            <constraint firstItem="8Hd-fh-1rl" firstAttribute="top" secondItem="CZz-dA-BNE" secondAttribute="top" id="Fg0-FM-xQQ"/>
-                            <constraint firstItem="jzj-oi-ZtF" firstAttribute="bottom" secondItem="8Hd-fh-1rl" secondAttribute="bottom" id="U4v-Ud-WWD"/>
-                            <constraint firstItem="LRQ-8w-ngE" firstAttribute="bottom" secondItem="jzj-oi-ZtF" secondAttribute="bottom" constant="-20" id="Wvw-C4-VWc"/>
-                            <constraint firstItem="jzj-oi-ZtF" firstAttribute="trailing" secondItem="LRQ-8w-ngE" secondAttribute="trailing" constant="20" id="Xws-eO-02O"/>
-                            <constraint firstItem="8Hd-fh-1rl" firstAttribute="leading" secondItem="jzj-oi-ZtF" secondAttribute="leading" id="hZe-oO-Prl"/>
+                            <constraint firstItem="jzj-oi-ZtF" firstAttribute="bottom" secondItem="LRQ-8w-ngE" secondAttribute="bottom" constant="20" id="VXZ-Hg-iEV"/>
+                            <constraint firstItem="mFa-cj-QyL" firstAttribute="top" secondItem="jzj-oi-ZtF" secondAttribute="top" id="p4n-7M-pLi"/>
+                            <constraint firstItem="jzj-oi-ZtF" firstAttribute="trailing" secondItem="mFa-cj-QyL" secondAttribute="trailing" constant="16" id="pDq-eR-cFS"/>
+                            <constraint firstItem="mFa-cj-QyL" firstAttribute="leading" secondItem="jzj-oi-ZtF" secondAttribute="leading" constant="16" id="reG-ql-UeS"/>
+                            <constraint firstItem="LRQ-8w-ngE" firstAttribute="leading" secondItem="jzj-oi-ZtF" secondAttribute="leading" constant="155" id="wOP-WB-IDy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="Him-6j-Xp1"/>
@@ -253,6 +288,9 @@
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="questionmark" catalog="system" width="96" height="128"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
+        <namedColor name="BackAlpha">
+            <color red="1" green="1" blue="1" alpha="0.19699999690055847" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="VCBackgroundColor">
             <color red="0.69800001382827759" green="0.7839999794960022" blue="0.875" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -9,21 +9,27 @@ import UIKit
 
 class ViewMoreViewController: UIViewController {
 
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var runTimeLabel: UILabel!
+    @IBOutlet var actorsLabel: UILabel!
+    @IBOutlet var plotLabel: UILabel!
+    @IBOutlet var directorLabel: UILabel!
+    @IBOutlet var posterImageView: UIImageView!
+    var peliculaRecibida : Movie?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        titleLabel.text = peliculaRecibida!.title + " - " + peliculaRecibida!.year
+        runTimeLabel.text = "Runtime: "  + peliculaRecibida!.runtime + " mins."
+        actorsLabel.text = "Actors: " + peliculaRecibida!.actors
+        actorsLabel.numberOfLines = 2
+        plotLabel.text = "Plot: " + peliculaRecibida!.plot
+        plotLabel.numberOfLines = 3
+        directorLabel.text = "Director: " + peliculaRecibida!.director
+        posterImageView.image = UIImage(named: peliculaRecibida!.poster_url)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }

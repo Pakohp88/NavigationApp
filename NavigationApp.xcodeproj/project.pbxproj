@@ -27,6 +27,7 @@
 		DF608FA228C3BBC600A29125 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF608FA128C3BBC600A29125 /* Genre.swift */; };
 		DF608FA428C3BC6A00A29125 /* GenreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF608FA328C3BC6A00A29125 /* GenreDataManager.swift */; };
 		DF67275928D68B6B00C48F01 /* GenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF67275828D68B6B00C48F01 /* GenreCollectionViewCell.swift */; };
+		DF67275B28D6974900C48F01 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF67275A28D6974900C48F01 /* MovieTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		DF608FA128C3BBC600A29125 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		DF608FA328C3BC6A00A29125 /* GenreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreDataManager.swift; sourceTree = "<group>"; };
 		DF67275828D68B6B00C48F01 /* GenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCollectionViewCell.swift; sourceTree = "<group>"; };
+		DF67275A28D6974900C48F01 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				DF608FA128C3BBC600A29125 /* Genre.swift */,
 				DF608FA328C3BC6A00A29125 /* GenreDataManager.swift */,
 				DF67275828D68B6B00C48F01 /* GenreCollectionViewCell.swift */,
+				DF67275A28D6974900C48F01 /* MovieTableViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				DF608FA428C3BC6A00A29125 /* GenreDataManager.swift in Sources */,
 				DF608F9628C3A11600A29125 /* CustomUIView.swift in Sources */,
 				DF608F7D28C2BBED00A29125 /* HelpViewController.swift in Sources */,
+				DF67275B28D6974900C48F01 /* MovieTableViewCell.swift in Sources */,
 				DF608F6128C2AEE600A29125 /* AppDelegate.swift in Sources */,
 				DF67275928D68B6B00C48F01 /* GenreCollectionViewCell.swift in Sources */,
 				DF608FA028C3AE2200A29125 /* MovieDataManager.swift in Sources */,

@@ -19,8 +19,7 @@ class MovieDataManager{
                 print(decodeMovies)
                 movies = decodeMovies.filter(
                     {$0.genres.contains(genres)}
-                )
-                print(movies)
+                )            
             }
             catch let err{
                 print(err.localizedDescription)
